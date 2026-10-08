@@ -1,0 +1,1409 @@
+
+
+        /* ==========================================================================
+
+           1. THEMES & VARIABLE CONFIGURATION
+
+           ========================================================================== */
+
+        :root {
+
+            --bg-dark: #050512;
+
+            --primary-pink: #ff2a75;
+
+            --accent-gold: #ffd700;
+
+            --card-bg: rgba(255, 255, 255, 0.08);
+
+            --card-border: rgba(255, 255, 255, 0.18);
+
+            --glass-blur: blur(20px);
+
+            --text-main: #ffffff;
+
+            --text-sub: #e0e0e0;
+
+            --shadow-glow: 0 0 30px rgba(255, 42, 117, 0.5);
+
+        }
+
+
+
+        body.theme-blossom {
+
+            --bg-dark: #230517;
+
+            --primary-pink: #ff66a3;
+
+            --accent-gold: #ffb3d9;
+
+            --card-bg: rgba(255, 182, 193, 0.12);
+
+            --card-border: rgba(255, 182, 193, 0.3);
+
+            --shadow-glow: 0 0 30px rgba(255, 102, 163, 0.6);
+
+        }
+
+
+
+        body.theme-neon {
+
+            --bg-dark: #020014;
+
+            --primary-pink: #00f0ff;
+
+            --accent-gold: #ff007f;
+
+            --card-bg: rgba(0, 240, 255, 0.08);
+
+            --card-border: rgba(0, 240, 255, 0.25);
+
+            --shadow-glow: 0 0 30px rgba(0, 240, 255, 0.6);
+
+        }
+
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+
+
+        body {
+
+            background-color: var(--bg-dark);
+
+            color: var(--text-main);
+
+            overflow-x: hidden;
+
+            min-height: 100vh;
+
+            transition: background-color 0.8s ease;
+
+        }
+
+
+
+        /* ==========================================================================
+
+           2. CANVAS & TOUCH-INTERACTIVE ATMOSPHERE
+
+           ========================================================================== */
+
+        #bg-canvas {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+
+        .aurora-bg {
+
+            position: fixed;
+
+            top: -50%;
+
+            left: -50%;
+
+            width: 200%;
+
+            height: 200%;
+
+            background: radial-gradient(circle, rgba(255,42,117,0.2) 0%, rgba(138,43,226,0.12) 35%, rgba(0,0,0,0) 70%);
+
+            animation: rotateAurora 35s linear infinite;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+
+        @keyframes rotateAurora {
+
+            0% { transform: rotate(0deg); }
+
+            100% { transform: rotate(360deg); }
+
+        }
+
+
+
+        /* ==========================================================================
+
+           3. FLOATING CONTROLS
+
+           ========================================================================== */
+
+        .controls-wrapper {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            z-index: 999;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            align-items: flex-end;
+
+        }
+
+
+
+        .control-pill {
+
+            background: var(--card-bg);
+
+            backdrop-filter: var(--glass-blur);
+
+            -webkit-backdrop-filter: var(--glass-blur);
+
+            border: 1px solid var(--card-border);
+
+            padding: 10px 18px;
+
+            border-radius: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+
+        .control-pill:hover { transform: scale(1.05); }
+
+
+
+        .pill-btn {
+
+            background: none;
+
+            border: none;
+
+            color: #fff;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .theme-select {
+
+            background: rgba(255, 255, 255, 0.1);
+
+            color: #fff;
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 20px;
+
+            padding: 4px 8px;
+
+            font-size: 12px;
+
+            outline: none;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .theme-select option { background: #111; color: #fff; }
+
+
+
+        /* ==========================================================================
+
+           4. INTRO SEQUENCE
+
+           ========================================================================== */
+
+        #intro-overlay {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            background-color: #020208;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            transition: opacity 1s ease;
+
+        }
+
+
+
+        .intro-emojis {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 30px;
+
+            min-height: 70px;
+
+            letter-spacing: 12px;
+
+        }
+
+
+
+        .sentence-display {
+
+            font-size: 2.2rem;
+
+            font-weight: 700;
+
+            color: #ffffff;
+
+            max-width: 800px;
+
+            line-height: 1.5;
+
+            min-height: 120px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-shadow: 0 0 20px rgba(255, 42, 117, 0.7);
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            transition: opacity 0.8s ease, transform 0.8s ease;
+
+        }
+
+
+
+        .sentence-display.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+
+        .btn-glow {
+
+            background: linear-gradient(135deg, var(--primary-pink), #ff758c);
+
+            color: white;
+
+            border: none;
+
+            padding: 16px 45px;
+
+            font-size: 1.2rem;
+
+            font-weight: bold;
+
+            border-radius: 35px;
+
+            cursor: pointer;
+
+            box-shadow: var(--shadow-glow);
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .btn-glow:hover {
+
+            transform: scale(1.08);
+
+            box-shadow: 0 0 40px var(--primary-pink);
+
+        }
+
+
+
+        .btn-secondary {
+
+            background: rgba(255, 255, 255, 0.15);
+
+            color: #fff;
+
+            border: 1px solid var(--card-border);
+
+            padding: 16px 35px;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+
+            border-radius: 35px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .btn-secondary:hover {
+
+            background: rgba(255, 255, 255, 0.25);
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        /* ==========================================================================
+
+           5. PASSWORD & WELCOME SCREEN
+
+           ========================================================================== */
+
+        #password-overlay {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            background: rgba(3, 3, 10, 0.92);
+
+            backdrop-filter: blur(25px);
+
+            -webkit-backdrop-filter: blur(25px);
+
+            z-index: 900;
+
+            display: none;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+
+        .password-card {
+
+            background: var(--card-bg);
+
+            border: 1px solid var(--card-border);
+
+            backdrop-filter: var(--glass-blur);
+
+            padding: 45px 35px;
+
+            border-radius: 28px;
+
+            text-align: center;
+
+            max-width: 400px;
+
+            width: 90%;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+        }
+
+
+
+        .password-input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            margin: 20px 0;
+
+            border-radius: 14px;
+
+            border: 1px solid var(--card-border);
+
+            background: rgba(255, 255, 255, 0.12);
+
+            color: #fff;
+
+            font-size: 1.5rem;
+
+            text-align: center;
+
+            outline: none;
+
+            letter-spacing: 8px;
+
+        }
+
+
+
+        .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+
+
+
+        @keyframes shake {
+
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+
+        }
+
+
+
+        #welcome-screen {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            background: #000;
+
+            z-index: 950;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            text-align: center;
+
+            color: #fff;
+
+        }
+
+
+
+        /* ==========================================================================
+
+           6. MAIN LAYOUT
+
+           ========================================================================== */
+
+        #main-content {
+
+            opacity: 0;
+
+            transition: opacity 1.5s ease;
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+
+
+        section {
+
+            padding: 80px 20px;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .section-title {
+
+            font-size: 2.6rem;
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+            background: linear-gradient(45deg, #fff, var(--primary-pink));
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .glass-card {
+
+            background: var(--card-bg);
+
+            backdrop-filter: var(--glass-blur);
+
+            -webkit-backdrop-filter: var(--glass-blur);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 24px;
+
+            padding: 35px;
+
+            margin-bottom: 30px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+            transition: transform 0.3s ease, border-color 0.3s ease;
+
+        }
+
+
+
+        .glass-card:hover { border-color: var(--primary-pink); }
+
+
+
+        /* ==========================================================================
+
+           7. SCRATCH CARD LOVE LETTER
+
+           ========================================================================== */
+
+        .scratch-container {
+
+            position: relative;
+
+            width: 100%;
+
+            max-width: 500px;
+
+            height: 280px;
+
+            margin: 0 auto;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow-glow);
+
+            user-select: none;
+
+        }
+
+
+
+        .scratch-content {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: linear-gradient(135deg, #ff2a75, #8a2be2);
+
+            color: #fff;
+
+            padding: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            box-sizing: border-box;
+
+            border-radius: 20px;
+
+        }
+
+
+
+        .scratch-content p {
+
+            font-size: 1.15rem;
+
+            line-height: 1.6;
+
+            font-weight: 500;
+
+        }
+
+
+
+        #scratch-canvas {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            cursor: pointer;
+
+            z-index: 2;
+
+        }
+
+
+
+        /* ==========================================================================
+
+           8. CARTOONS & SCRAPBOOK
+
+           ========================================================================== */
+
+        .cartoon-showcase {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin: 30px 0;
+
+        }
+
+
+
+        .svg-cartoon-box {
+
+            width: 200px;
+
+            height: 180px;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .svg-cartoon-box:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: var(--shadow-glow);
+
+        }
+
+
+
+        .cartoon-svg {
+
+            width: 90px;
+
+            height: 90px;
+
+            animation: floatCartoon 4s ease-in-out infinite;
+
+        }
+
+
+
+        @keyframes floatCartoon {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(-8px); }
+
+        }
+
+
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 25px;
+
+        }
+
+
+
+        .polaroid {
+
+            background: #fff;
+
+            padding: 15px 15px 25px 15px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+
+            transform: rotate(-2deg);
+
+            transition: all 0.3s ease;
+
+            color: #333;
+
+            text-align: center;
+
+        }
+
+
+
+        .polaroid:nth-child(even) { transform: rotate(2deg); }
+
+
+
+        .polaroid:hover {
+
+            transform: scale(1.06) rotate(0deg);
+
+            z-index: 5;
+
+        }
+
+
+
+        .custom-art-frame {
+
+            width: 100%;
+
+            height: 220px;
+
+            background: linear-gradient(135deg, #ffe6f0, #ffd1dc);
+
+            border-radius: 6px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border: 2px dashed #ffb3c6;
+
+        }
+
+
+
+        .polaroid-caption {
+
+            margin-top: 15px;
+
+            font-family: 'Courier New', Courier, monospace;
+
+            font-weight: bold;
+
+            font-size: 1rem;
+
+            color: #222;
+
+        }
+
+
+
+        /* ==========================================================================
+
+           9. CAKE & GAMES
+
+           ========================================================================== */
+
+        .cake-stage {
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+
+        .candle-container {
+
+            position: relative;
+
+            margin: 20px 0;
+
+            display: inline-block;
+
+        }
+
+
+
+        .flame {
+
+            width: 20px;
+
+            height: 30px;
+
+            background: orange;
+
+            border-radius: 50% 50% 20% 20%;
+
+            position: absolute;
+
+            top: -30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            box-shadow: 0 0 20px yellow, 0 0 40px orange;
+
+            animation: flicker 0.2s infinite alternate;
+
+            transition: opacity 0.5s ease;
+
+        }
+
+
+
+        @keyframes flicker {
+
+            0% { transform: translateX(-50%) scale(1); }
+
+            100% { transform: translateX(-50%) scale(1.1); }
+
+        }
+
+
+
+        .flame.blown-out {
+
+            opacity: 0;
+
+            pointer-events: none;
+
+        }
+
+
+
+        .game-title {
+
+            font-size: 1.3rem;
+
+            font-weight: bold;
+
+            color: var(--primary-pink);
+
+            margin-bottom: 15px;
+
+            text-align: center;
+
+        }
+
+
+
+        .balloon-area {
+
+            height: 260px;
+
+            width: 100%;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border: 1px dashed var(--card-border);
+
+        }
+
+
+
+        .game-balloon {
+
+            position: absolute;
+
+            font-size: 2.8rem;
+
+            cursor: pointer;
+
+            user-select: none;
+
+            animation: floatUp 6s linear infinite;
+
+        }
+
+
+
+        @keyframes floatUp {
+
+            0% { transform: translateY(260px); }
+
+            100% { transform: translateY(-60px); }
+
+        }
+
+
+
+        .heart-search-area {
+
+            height: 240px;
+
+            width: 100%;
+
+            position: relative;
+
+            border-radius: 16px;
+
+            background: linear-gradient(180deg, #020208, #100a26);
+
+            border: 1px solid var(--card-border);
+
+            cursor: crosshair;
+
+        }
+
+
+
+        .hidden-heart {
+
+            position: absolute;
+
+            font-size: 1.5rem;
+
+            opacity: 0.12;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .hidden-heart.found {
+
+            opacity: 1;
+
+            transform: scale(1.6);
+
+            filter: drop-shadow(0 0 12px var(--primary-pink));
+
+        }
+
+
+
+        .quiz-option {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid var(--card-border);
+
+            padding: 12px 20px;
+
+            border-radius: 12px;
+
+            margin: 10px 0;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .quiz-option:hover {
+
+            background: rgba(255, 42, 117, 0.2);
+
+            border-color: var(--primary-pink);
+
+        }
+
+
+
+        .reason-item {
+
+            padding: 12px 15px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+            font-size: 0.98rem;
+
+            color: var(--text-sub);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+
+        .reason-item:hover {
+
+            background: rgba(255, 42, 117, 0.1);
+
+            color: #fff;
+
+        }
+
+
+
+        /* Birthday Run Overlay & Colorful Dynamic Balloons */
+
+        #final-screen {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100vh;
+
+            background: rgba(0, 0, 0, 0.92);
+
+            backdrop-filter: blur(20px);
+
+            z-index: 1000;
+
+            display: none;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            overflow: hidden;
+
+        }
+
+
+
+        #final-screen h1 {
+
+            font-size: 3.5rem;
+
+            color: var(--primary-pink);
+
+            text-shadow: 0 0 20px var(--primary-pink), 0 0 40px var(--primary-pink);
+
+            margin-bottom: 15px;
+
+            z-index: 1002;
+
+        }
+
+
+
+        #final-screen p, #final-screen .action-btn-group {
+
+            z-index: 1002;
+
+        }
+
+
+
+        .action-btn-group {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+
+
+        .run-balloon {
+
+            position: fixed;
+
+            bottom: -100px;
+
+            font-size: 3.5rem;
+
+            pointer-events: none;
+
+            z-index: 1001;
+
+            animation: riseUpBalloon 4.5s ease-out forwards;
+
+        }
+
+
+
+        @keyframes riseUpBalloon {
+
+            0% {
+
+                transform: translateY(0) scale(0.8) rotate(0deg);
+
+                opacity: 0.9;
+
+            }
+
+            100% {
+
+                transform: translateY(-115vh) scale(1.3) rotate(25deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+
+        /* ==========================================================================
+
+           10. THEATRICAL CLOSING CURTAINS
+
+           ========================================================================== */
+
+        .curtain-panel {
+
+            position: fixed;
+
+            top: 0;
+
+            width: 50vw;
+
+            height: 100vh;
+
+            background: linear-gradient(90deg, #500, #800, #400);
+
+            box-shadow: inset 0 0 50px #000;
+
+            z-index: 9999;
+
+            transition: transform 2.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+            pointer-events: none;
+
+        }
+
+
+
+        #curtain-left {
+
+            left: 0;
+
+            transform: translateX(-100%);
+
+            border-right: 3px solid var(--accent-gold);
+
+        }
+
+
+
+        #curtain-right {
+
+            right: 0;
+
+            transform: translateX(100%);
+
+            border-left: 3px solid var(--accent-gold);
+
+        }
+
+
+
+        body.curtains-closed #curtain-left {
+
+            transform: translateX(0);
+
+        }
+
+
+
+        body.curtains-closed #curtain-right {
+
+            transform: translateX(0);
+
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            .sentence-display { font-size: 1.5rem; }
+
+            .section-title { font-size: 2rem; }
+
+            #final-screen h1 { font-size: 2.2rem; }
+
+            .scratch-container { height: 260px; }
+
+            .scratch-content p { font-size: 1rem; }
+
+        }
+
+    
+
+/* ========================================================================== 
+   OUR REAL MEMORIES — Sejal & Aashu
+   Added without removing the original website features.
+   ========================================================================== */
+.memories-intro { text-align:center; max-width:760px; margin: -20px auto 34px; color: var(--text-sub); line-height:1.8; }
+.memories-shell { position:relative; padding:26px; border-radius:32px; background:linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,42,117,.06)); border:1px solid rgba(255,255,255,.16); box-shadow:0 25px 80px rgba(0,0,0,.35); overflow:hidden; }
+.memories-shell::before { content:'❤'; position:absolute; right:22px; top:12px; font-size:5rem; opacity:.06; transform:rotate(12deg); pointer-events:none; }
+.memory-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative; z-index:1; }
+.memory-card { position:relative; margin:0; padding:9px 9px 14px; background:linear-gradient(160deg, rgba(255,255,255,.97), rgba(255,241,247,.96)); color:#24121c; border-radius:18px; box-shadow:0 18px 45px rgba(0,0,0,.35); transform:rotate(var(--tilt)); transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; overflow:hidden; }
+.memory-card:hover { transform:translateY(-12px) rotate(0deg) scale(1.025); box-shadow:0 28px 65px rgba(255,42,117,.28); z-index:4; }
+.memory-card.featured { grid-column:span 2; grid-row:span 2; }
+.memory-photo-wrap { position:relative; overflow:hidden; border-radius:13px; background:#120914; aspect-ratio:4/3; }
+.memory-card.featured .memory-photo-wrap { aspect-ratio:16/11; }
+.memory-card img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .7s ease, filter .7s ease; cursor:zoom-in; }
+.memory-card:hover img { transform:scale(1.055); filter:saturate(1.08); }
+.memory-heart { position:absolute; top:10px; right:10px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:rgba(15,7,13,.48); backdrop-filter:blur(8px); color:#fff; font-size:1.1rem; box-shadow:0 8px 22px rgba(0,0,0,.25); pointer-events:none; }
+.memory-caption { padding:12px 5px 2px; font-family:Georgia, 'Times New Roman', serif; font-size:1rem; font-weight:700; letter-spacing:.01em; }
+.memory-caption small { display:block; margin-top:4px; font-family:inherit; font-size:.76rem; font-weight:500; color:#6b5360; }
+.memory-film { margin-top:28px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; color:#ffd8e8; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
+.memory-film span { padding:8px 13px; border:1px solid rgba(255,255,255,.14); border-radius:999px; background:rgba(255,255,255,.05); }
+.video-memory { margin-top:42px; position:relative; z-index:1; }
+.video-memory-card { max-width:920px; margin:0 auto; padding:10px; border-radius:28px; background:linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,42,117,.08)); border:1px solid rgba(255,255,255,.18); box-shadow:0 28px 75px rgba(0,0,0,.45); }
+.video-memory video { width:100%; display:block; border-radius:20px; background:#000; max-height:680px; object-fit:contain; }
+.video-memory-note { text-align:center; margin:14px 0 0; color:#f9dce9; font-size:.92rem; }
+.memory-lightbox { position:fixed; inset:0; z-index:2000; display:none; place-items:center; padding:24px; background:rgba(2,0,8,.88); backdrop-filter:blur(18px); }
+.memory-lightbox.open { display:grid; animation:memoryFade .25s ease; }
+@keyframes memoryFade { from {opacity:0} to {opacity:1} }
+.lightbox-inner { position:relative; width:min(1100px,96vw); max-height:92vh; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.lightbox-inner img { max-width:100%; max-height:78vh; object-fit:contain; border-radius:18px; box-shadow:0 25px 100px rgba(255,42,117,.22); }
+.lightbox-caption { color:#fff; text-align:center; font-family:Georgia,serif; font-size:1.05rem; }
+.lightbox-close { position:absolute; top:-12px; right:-6px; width:42px; height:42px; border:1px solid rgba(255,255,255,.25); border-radius:50%; background:rgba(0,0,0,.5); color:#fff; font-size:1.4rem; cursor:pointer; z-index:2; }
+@media (max-width:800px) { .memory-grid { grid-template-columns:repeat(2,1fr); } .memory-card.featured { grid-column:span 2; grid-row:auto; } }
+@media (max-width:560px) { .memories-shell { padding:12px; border-radius:24px; } .memory-grid { grid-template-columns:1fr 1fr; gap:10px; } .memory-card { padding:6px 6px 10px; border-radius:14px; } .memory-card.featured { grid-column:span 2; } .memory-caption { font-size:.78rem; padding:8px 3px 1px; } .memory-caption small { font-size:.63rem; } .memory-heart { width:30px; height:30px; font-size:.9rem; top:7px; right:7px; } .video-memory { margin-top:28px; } .video-memory-card { padding:6px; border-radius:20px; } .video-memory video { border-radius:15px; } .lightbox-inner img { max-height:72vh; } }

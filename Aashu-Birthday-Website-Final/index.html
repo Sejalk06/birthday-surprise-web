@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Aashu❤️ | From Sejal</title>
+
+    <!-- Canvas Confetti Library -->
+
+    <script src="https\://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onclick="handleTouchBg(event)" ontouchstart="handleTouchBg(event)">
+
+
+
+    <!-- CURTAINS FOR GRAND FINALE CLOSING -->
+
+    <div class="curtain-panel" id="curtain-left"></div>
+
+    <div class="curtain-panel" id="curtain-right"></div>
+
+
+
+    <!-- ATMOSPHERE CANVAS -->
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="aurora-bg"></div>
+
+
+
+    <!-- FLOATING CONTROLS -->
+
+    <div class="controls-wrapper">
+
+        <div class="control-pill">
+
+            <span style="font-size: 12px;">🎨 Theme:</span>
+
+            <select class="theme-select" onchange="changeTheme(this.value)">
+
+                <option value="default">Midnight Gold</option>
+
+                <option value="blossom">Pink Blossom</option>
+
+                <option value="neon">Neon Cyber</option>
+
+            </select>
+
+        </div>
+
+        <div class="control-pill">
+
+            <button class="pill-btn" id="play-pause-btn" onclick="toggleMusic()">🎵 Silent Lofi Audio</button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CINEMATIC INTRO -->
+
+    <div id="intro-overlay">
+
+        <div class="intro-emojis" id="intro-emojis">❤️ 🧿 💐 🎂 🎈 ✨</div>
+
+        <div class="sentence-display" id="sentence-box"></div>
+
+        <button class="btn-glow" id="intro-continue-btn" style="display: none; margin-top: 30px;" onclick="showPasswordScreen()">Open My Heart ❤️</button>
+
+    </div>
+
+
+
+    <!-- PASSWORD OVERLAY -->
+
+    <div id="password-overlay">
+
+        <div class="password-card" id="pass-card">
+
+            <h2 style="font-weight: 400; margin-bottom: 10px;">Enter Secret Password ❤️</h2>
+
+            <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 15px;">Hint: Our special numbers</p>
+
+            <input type="password" id="pass-input" class="password-input" placeholder="••••" maxlength="4">
+
+            <button class="btn-glow" style="width: 100%;" onclick="checkPassword()">Unlock Website</button>
+
+            <div id="pass-error" style="color: #ff758c; margin-top: 15px; font-size: 0.9rem; min-height: 20px;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- WELCOME DISPLAY -->
+
+    <div id="welcome-screen">
+
+        <div style="font-size: 3rem; margin-bottom: 15px;">Welcome Babbu ❤️😘</div>
+
+        <div style="font-size: 1.2rem; color: #aaa;">Ashitosh & Sejal's Special Realm...</div>
+
+    </div>
+
+
+
+    <!-- MAIN WEBSITE CONTENT -->
+
+    <div id="main-content">
+
+
+
+        <!-- HERO SECTION -->
+
+        <section style="text-align: center; min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+
+
+            <div class="cartoon-showcase">
+
+                <div class="svg-cartoon-box">
+
+                    <svg class="cartoon-svg" viewBox="0 0 100 100">
+
+                        <path d="M50 10 A35 35 0 1 0 85 60 A28 28 0 1 1 50 10 Z" fill="#ffd700"/>
+
+                        <circle cx="45" cy="50" r="8" fill="#ff2a75"/>
+
+                        <circle cx="55" cy="50" r="7" fill="#333"/>
+
+                        <path d="M40 58 Q50 68 60 58" stroke="#ff2a75" stroke-width="3" fill="none"/>
+
+                    </svg>
+
+                    <span style="font-size: 12px; margin-top: 8px; color: #aaa;">Moon Magic 🌙</span>
+
+                </div>
+
+
+
+                <div class="svg-cartoon-box">
+
+                    <svg class="cartoon-svg" viewBox="0 0 100 100">
+
+                        <rect x="25" y="45" width="50" height="35" rx="8" fill="#ff758c"/>
+
+                        <path d="M75 50 C85 50 85 70 75 70" stroke="#ff758c" stroke-width="4" fill="none"/>
+
+                        <path d="M40 35 Q45 25 40 15 M60 35 Q65 25 60 15" stroke="#fff" stroke-width="2" fill="none"/>
+
+                    </svg>
+
+                    <span style="font-size: 12px; margin-top: 8px; color: #aaa;">Warm Coffee ☕</span>
+
+                </div>
+
+
+
+                <div class="svg-cartoon-box">
+
+                    <svg class="cartoon-svg" viewBox="0 0 100 100">
+
+                        <path d="M20 45 A30 30 0 0 1 80 45 Z" fill="#ff2a75"/>
+
+                        <line x1="50" y1="45" x2="50" y2="80" stroke="#fff" stroke-width="3"/>
+
+                        <circle cx="43" cy="65" r="5" fill="#fff"/>
+
+                        <circle cx="57" cy="65" r="5" fill="#fff"/>
+
+                    </svg>
+
+                    <span style="font-size: 12px; margin-top: 8px; color: #aaa;">Forever Together ☂️</span>
+
+                </div>
+
+            </div>
+
+
+
+            <h1 style="font-size: 3.4rem; margin-bottom: 15px; text-shadow: var(--shadow-glow);">Happy Birthday, Ashitosh ❤️</h1>
+
+            <p style="font-size: 1.25rem; color: var(--text-sub); max-width: 650px; line-height: 1.6;">
+
+                From <strong>Sejal</strong>, with all my love. Touch anywhere on screen to spawn love stars! ✨
+
+            </p>
+
+        </section>
+
+
+
+        <!-- MANUALLY SCRATCHABLE LOVE LETTER CARD -->
+
+        <section>
+
+            <h2 class="section-title">Scratch My Birthday Card 🪙💌</h2>
+
+            <div class="glass-card" style="text-align: center;">
+
+                <p style="margin-bottom: 20px; color: var(--text-sub);">Scratch manually using your finger or mouse cursor to reveal the message below!</p>
+
+                <div class="scratch-container" id="scratch-wrapper">
+
+                    <div class="scratch-content">
+
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Happy Birthday Aashu ❤️</h3>
+
+                        <p>May you get all the things you deserve! You are very kind and caring person in my life. I am so blessed to have you forever and ever! 🧿✨</p>
+
+                        <span style="margin-top: 15px; font-weight: bold; font-size: 0.9rem;">- Always Yours, Sejal ❤️</span>
+
+                    </div>
+
+                    <canvas id="scratch-canvas"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- WHY YOU MATTER -->
+
+        <section>
+
+            <h2 class="section-title">Why You Matter</h2>
+
+            <div class="glass-card">
+
+                <p style="line-height: 1.9; font-size: 1.1rem; color: var(--text-sub);">
+
+                    Ashitosh, in a world full of temporary things, you are my permanent safe haven. Your smile brightens up my darkest days, and your voice brings peace to my mind. You are not just my partner; you are my best friend, my confidant, and my home.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SHAYARI SECTION -->
+
+        <section>
+
+            <h2 class="section-title">Romantic Shayari</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+                <div class="glass-card" style="text-align: center; font-style: italic; line-height: 1.8;">
+
+                    <h3 style="color: var(--primary-pink); margin-bottom: 15px; font-style: normal;">मराठी शायरी 🌺</h3>
+
+                    "तुझ्या हसण्याने फुलतात कळ्या,<br>
+
+                    तुझ्या स्पर्शाने वाहतात वाऱ्या.<br>
+
+                    आशू, तू आहेस माझ्या आयुष्याचा ध्यास,<br>
+
+                    जन्मोजन्मी असावा तुझाच सहवास!" ❤️
+
+                </div>
+
+                <div class="glass-card" style="text-align: center; font-style: italic; line-height: 1.8;">
+
+                    <h3 style="color: var(--primary-pink); margin-bottom: 15px; font-style: normal;">हिंदी शायरी 🌹</h3>
+
+                    "तुम्हारी एक झलक से संवर जाती है दुनिया मेरी,<br>
+
+                    तुम साथ हो तो आसान लगती है हर राह मेरी।<br>
+
+                    आशू, रब से बस एक ही दुआ है मेरी,<br>
+
+                    हर जन्म में मुझे मोहब्बत मिले तेरी।" ❤️
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTERACTIVE GAMES SECTION -->
+
+        <section>
+
+            <h2 class="section-title">Interactive Mini Games 🎮</h2>
+
+
+
+            <!-- Game 1 -->
+
+            <div class="glass-card">
+
+                <div class="game-title">1. Pop Love Balloons 🎈</div>
+
+                <p style="text-align: center; margin-bottom: 15px; color: var(--text-sub);">Pop 5 balloons to collect birthday love!</p>
+
+                <div class="balloon-area" id="balloon-area"></div>
+
+                <div style="text-align: center; margin-top: 12px; font-weight: bold;" id="balloon-score">Popped: 0 / 5</div>
+
+            </div>
+
+
+
+            <!-- Game 2 -->
+
+            <div class="glass-card">
+
+                <div class="game-title">2. Find Hidden Glowing Hearts 🔍❤️</div>
+
+                <p style="text-align: center; margin-bottom: 15px; color: var(--text-sub);">Click on the night sky to locate 4 hidden glowing hearts!</p>
+
+                <div class="heart-search-area" id="heart-search-area"></div>
+
+                <div style="text-align: center; margin-top: 12px; font-weight: bold;" id="heart-score">Hearts Found: 0 / 4</div>
+
+            </div>
+
+
+
+            <!-- Game 3 -->
+
+            <div class="glass-card">
+
+                <div class="game-title">3. Couple Quiz For Ashitosh ❓</div>
+
+                <div id="quiz-container">
+
+                    <p id="quiz-question" style="font-size: 1.1rem; text-align: center; margin-bottom: 15px;"></p>
+
+                    <div id="quiz-options"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SCRAPBOOK GALLERY -->
+
+        <section>
+
+            <h2 class="section-title">Our Memory Scrapbook 📸</h2>
+
+            <div class="gallery-grid">
+
+                <div class="polaroid">
+
+                    <div class="custom-art-frame">
+
+                        <span style="font-size: 3rem;">👩‍❤️‍👨</span>
+
+                        <span style="font-size: 0.8rem; color: #ff2a75; font-weight: bold; margin-top: 8px;">SEJAL & ASHITOSH</span>
+
+                    </div>
+
+                    <div class="polaroid-caption">Where our love began ✨</div>
+
+                </div>
+
+                <div class="polaroid">
+
+                    <div class="custom-art-frame">
+
+                        <span style="font-size: 3rem;">🌅</span>
+
+                        <span style="font-size: 0.8rem; color: #ff2a75; font-weight: bold; margin-top: 8px;">PRECIOUS MOMENTS</span>
+
+                    </div>
+
+                    <div class="polaroid-caption">Your unforgettable smile ❤️</div>
+
+                </div>
+
+                <div class="polaroid">
+
+                    <div class="custom-art-frame">
+
+                        <span style="font-size: 3rem;">💍</span>
+
+                        <span style="font-size: 0.8rem; color: #ff2a75; font-weight: bold; margin-top: 8px;">FOREVER BOND</span>
+
+                    </div>
+
+                    <div class="polaroid-caption">Holding hands forever 🌹</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        
+<!-- ========================================================================== 
+     REAL MEMORIES — 9 PHOTOS + YOUR VIDEO
+     The original scrapbook above is intentionally kept.
+     ========================================================================== -->
+<section id="real-memories">
+  <h2 class="section-title">Our Little Universe 💗</h2>
+  <p class="memories-intro">
+    These aren't just photos. They're tiny pieces of our story — the silly moments,
+    the peaceful ones, the dressed-up days, the adventures, and all the little looks
+    that make me fall for you again. ❤️
+  </p>
+
+  <div class="memories-shell">
+    <div class="memory-grid">
+      <figure class="memory-card featured" style="--tilt:-1.2deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo01.jpg" alt="A playful couple memory in the car" loading="lazy" onclick="openMemory(this, 'That little coconut, that silly kiss, and us being us. ❤️')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">The silly little moments <small>the ones I never want to forget</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:1.4deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo02.jpg" alt="Couple smiling together beside the water" loading="lazy" onclick="openMemory(this, 'You + me + a little sunshine = one of my favourite days. ☀️')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">Sunshine & your smile <small>one beautiful day</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:-1.7deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo03.jpg" alt="Couple selfie in a car" loading="lazy" onclick="openMemory(this, 'Some of my favourite memories happen in the most ordinary places — especially beside you. 🥹')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">Just us <small>nothing fancy, everything special</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:1.1deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo04.jpg" alt="Couple sitting together under a tree" loading="lazy" onclick="openMemory(this, 'Your face looking at me like that… I could stay in this moment forever. 🌿')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">My favourite view <small>you, looking at me</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:-1.3deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo05.jpg" alt="Couple dressed traditionally at a temple" loading="lazy" onclick="openMemory(this, 'A little traditional, a little beautiful, and completely us. 💗')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">A beautiful day <small>all dressed up with my person</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:1.6deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo06.jpg" alt="Couple smiling together indoors" loading="lazy" onclick="openMemory(this, 'That smile of yours is still one of my favourite things in the world. ❤️')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">Your smile <small>my instant happiness</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:-1.4deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo07.jpg" alt="Couple sitting together beside a waterfall" loading="lazy" onclick="openMemory(this, 'Adventure feels different when I have you next to me. 🌊')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">Our little adventure <small>where everything felt alive</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:1.2deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo08.jpg" alt="Couple hugging together indoors" loading="lazy" onclick="openMemory(this, 'If home could be a person, I think it would look a lot like this moment. 🫶')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">My safe place <small>one warm little hug</small></figcaption>
+      </figure>
+
+      <figure class="memory-card" style="--tilt:-1.1deg">
+        <div class="memory-photo-wrap">
+          <img src="photos/photo09.jpg" alt="Playful couple selfie in the car" loading="lazy" onclick="openMemory(this, 'And then there are the moments where you make me laugh without even trying. 😂❤️')">
+          <span class="memory-heart">♥</span>
+        </div>
+        <figcaption class="memory-caption">You being you <small>and me loving every bit of it</small></figcaption>
+      </figure>
+    </div>
+
+    <div class="memory-film">
+      <span>9 memories</span><span>1 story</span><span>still choosing you</span>
+    </div>
+
+    <div class="video-memory">
+      <h3 style="text-align:center; font-size:clamp(1.7rem,4vw,2.5rem); margin-bottom:10px; color:#fff;">🎬 A Little Piece of Us</h3>
+      <p style="text-align:center; color:var(--text-sub); margin-bottom:18px;">Press play when you reach this part. This one is just for you, Aashu. ❤️</p>
+      <div class="video-memory-card">
+        <video controls playsinline preload="metadata" poster="photos/photo01.jpg">
+          <source src="videos/aashu-birthday.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="video-memory-note">No autoplay — because I want you to choose the moment you press play. 🥹❤️</p>
+    </div>
+  </div>
+</section>
+
+<!-- Full-screen photo viewer -->
+<div class="memory-lightbox" id="memory-lightbox" onclick="closeMemory(event)">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" type="button" aria-label="Close photo" onclick="closeMemory()">×</button>
+    <img id="memory-lightbox-image" src="" alt="Expanded memory">
+    <div class="lightbox-caption" id="memory-lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- 100 DIFFERENT REASONS WHY I LOVE YOU -->
+
+        <section>
+
+            <h2 class="section-title">100 Reasons Why Sejal Loves Ashitosh ❤️</h2>
+
+            <div class="glass-card">
+
+                <div style="max-height: 380px; overflow-y: auto; padding-right: 10px;" id="reasons-container"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LOVE METER -->
+
+        <section>
+
+            <h2 class="section-title">Love Meter</h2>
+
+            <div class="glass-card" style="text-align: center;">
+
+                <p>Calculating Sejal's love intensity for Ashitosh...</p>
+
+                <div style="font-size: 3.5rem; font-weight: bold; color: var(--primary-pink); margin: 20px 0;" id="meter-counter">0%</div>
+
+                <p id="meter-text" style="font-size: 1.2rem; display: none; margin-bottom: 15px;">My love for you is infinite babe ❤️</p>
+
+                <button class="btn-glow" onclick="startLoveMeter()">Calculate Love</button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REAL BLOW CANDLES & CAKE CUTTING -->
+
+        <section>
+
+            <h2 class="section-title">Blow Candles & Cut Cake 🎂</h2>
+
+            <div class="glass-card cake-stage">
+
+                <div class="candle-container">
+
+                    <div class="flame" id="candle-flame"></div>
+
+                    <div style="font-size: 6rem; cursor: pointer;" id="cake-emoji" onclick="interactCake()">🎂</div>
+
+                </div>
+
+                <p id="candle-status" style="margin-top: 15px; color: var(--text-sub); font-size: 1.1rem;">
+
+                    Blow into your mic or tap the flame to blow out candles! 🕯️
+
+                </p>
+
+                <button class="btn-glow" style="margin-top: 15px; font-size: 0.9rem; padding: 10px 25px;" onclick="enableMicBlow()">Enable Mic To Blow Candle 🎙️</button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- START BIRTHDAY RUN (GRAND ALL-IN-ONE CELEBRATION) -->
+
+        <section style="text-align: center;">
+
+            <button class="btn-glow" style="font-size: 1.4rem; padding: 22px 55px;" onclick="startBirthdayRun()">🚀 START BIRTHDAY RUN 🎆</button>
+
+        </section>
+
+
+
+    </div>
+
+
+
+    <!-- BIRTHDAY RUN OVERLAY -->
+
+    <div id="final-screen">
+
+        <h1>HAPPY BIRTHDAY AASHU ❤️</h1>
+
+        <p style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">You deserve all the happiness in the universe!</p>
+
+        <p style="color: var(--primary-pink); font-weight: bold; font-size: 2.2rem; margin-top: 15px;">LOVE YOU ASHITOSH ❤️</p>
+
+        <p style="font-size: 1.4rem; color: #ffd700; margin-top: 10px; font-weight: bold;">- From Your Seji ❤️✨</p>
+
+
+
+        <div class="action-btn-group">
+
+            <button class="btn-glow" onclick="replayCelebration()">Replay Celebration 🌹</button>
+
+            <button class="btn-secondary" onclick="closeBirthdayRun()">Close & Curtain Call 🎭</button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT ENGINE -->
+
+    <script>
+
+        /* --------------------------------------------------------------------------
+
+           A. Silent Lofi Love Audio Synthesizer
+
+           -------------------------------------------------------------------------- */
+
+        let audioCtx, isMusicPlaying = false, lofiTimer;
+
+
+
+        function playSilentLofiMusic() {
+
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+            const lofiChords = [130.81, 164.81, 196.00, 246.94, 220.00, 261.63, 329.63];
+
+            let idx = 0;
+
+
+
+            lofiTimer = setInterval(() => {
+
+                if (!isMusicPlaying) return;
+
+                let osc = audioCtx.createOscillator();
+
+                let gain = audioCtx.createGain();
+
+                osc.type = 'triangle';
+
+                osc.frequency.setValueAtTime(lofiChords[idx % lofiChords.length], audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0.012, audioCtx.currentTime);
+
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.5);
+
+                osc.connect(gain);
+
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+
+                osc.stop(audioCtx.currentTime + 2.5);
+
+                idx++;
+
+            }, 1200);
+
+        }
+
+
+
+        function toggleMusic() {
+
+            const btn = document.getElementById('play-pause-btn');
+
+            if (!isMusicPlaying) {
+
+                isMusicPlaying = true;
+
+                btn.innerText = '🎵 Silent Lofi Playing';
+
+                playSilentLofiMusic();
+
+            } else {
+
+                isMusicPlaying = false;
+
+                btn.innerText = '🔇 Music Muted';
+
+                if (lofiTimer) clearInterval(lofiTimer);
+
+            }
+
+        }
+
+
+
+        function changeTheme(themeName) {
+
+            document.body.className = '';
+
+            if (themeName !== 'default') document.body.classList.add('theme-' + themeName);
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           B. Intro Sequence
+
+           -------------------------------------------------------------------------- */
+
+        const introSentences = [
+
+            "Heyyy Aashuu... ❤️",
+
+            "Happy Birthday My Forever Person ❤️🧿",
+
+            "You're always my favourite person.",
+
+            "It's Sejal here, making this day extra special for you Ashitosh...",
+
+            "Today I have something very special only for you..."
+
+        ];
+
+        let currentSentenceIdx = 0;
+
+
+
+        function playSentenceSequence() {
+
+            const box = document.getElementById('sentence-box');
+
+            if (currentSentenceIdx < introSentences.length) {
+
+                box.innerText = introSentences[currentSentenceIdx];
+
+                box.classList.add('active');
+
+
+
+                setTimeout(() => {
+
+                    box.classList.remove('active');
+
+                    currentSentenceIdx++;
+
+                    setTimeout(playSentenceSequence, 800);
+
+                }, 2200);
+
+            } else {
+
+                document.getElementById('intro-continue-btn').style.display = 'inline-block';
+
+            }
+
+        }
+
+
+
+        function showPasswordScreen() {
+
+            document.getElementById('intro-overlay').style.opacity = '0';
+
+            setTimeout(() => {
+
+                document.getElementById('intro-overlay').style.display = 'none';
+
+                document.getElementById('password-overlay').style.display = 'flex';
+
+            }, 1000);
+
+        }
+
+
+
+        function checkPassword() {
+
+            const input = document.getElementById('pass-input').value;
+
+            const card = document.getElementById('pass-card');
+
+            const err = document.getElementById('pass-error');
+
+
+
+            if (input === '6868') {
+
+                document.getElementById('password-overlay').style.display = 'none';
+
+                const welcome = document.getElementById('welcome-screen');
+
+                welcome.style.display = 'flex';
+
+
+
+                toggleMusic();
+
+                fireworks();
+
+
+
+                setTimeout(() => {
+
+                    welcome.style.opacity = '0';
+
+                    welcome.style.transition = 'opacity 1s ease';
+
+                    setTimeout(() => {
+
+                        welcome.style.display = 'none';
+
+                        document.getElementById('main-content').style.opacity = '1';
+
+                        initScratchCard();
+
+                    }, 1000);
+
+                }, 2200);
+
+            } else {
+
+                err.innerText = "Sorry Aashu 🥺 We can't open it. Try again ❤️";
+
+                card.classList.add('shake');
+
+                setTimeout(() => card.classList.remove('shake'), 500);
+
+            }
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           C. Scratchable Canvas Card
+
+           -------------------------------------------------------------------------- */
+
+        function initScratchCard() {
+
+            const canvas = document.getElementById('scratch-canvas');
+
+            const ctx = canvas.getContext('2d');
+
+            const wrapper = document.getElementById('scratch-wrapper');
+
+
+
+            canvas.width = wrapper.offsetWidth;
+
+            canvas.height = wrapper.offsetHeight;
+
+
+
+            ctx.fillStyle = '#c0c0c0';
+
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#666';
+
+            ctx.font = 'bold 18px sans-serif';
+
+            ctx.textAlign = 'center';
+
+            ctx.fillText('✨ Touch & Scratch Here Ashitosh! ✨', canvas.width / 2, canvas.height / 2);
+
+
+
+            let isScratching = false;
+
+
+
+            function scratch(e) {
+
+                if (!isScratching) return;
+
+                const rect = canvas.getBoundingClientRect();
+
+                const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+
+                const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+
+
+
+                ctx.globalCompositeOperation = 'destination-out';
+
+                ctx.beginPath();
+
+                ctx.arc(x, y, 25, 0, Math.PI * 2);
+
+                ctx.fill();
+
+            }
+
+
+
+            canvas.addEventListener('mousedown', () => isScratching = true);
+
+            canvas.addEventListener('mouseup', () => isScratching = false);
+
+            canvas.addEventListener('mousemove', scratch);
+
+
+
+            canvas.addEventListener('touchstart', () => isScratching = true);
+
+            canvas.addEventListener('touchend', () => isScratching = false);
+
+            canvas.addEventListener('touchmove', scratch);
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           D. Touch Anywhere Atmosphere Interaction
+
+           -------------------------------------------------------------------------- */
+
+        function handleTouchBg(e) {
+
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'CANVAS') return;
+
+            const x = e.clientX || (e.touches && e.touches[0].clientX);
+
+            const y = e.clientY || (e.touches && e.touches[0].clientY);
+
+
+
+            if (x && y) {
+
+                const particle = document.createElement('div');
+
+                particle.innerText = ['❤️', '✨', '💖', '🌸'][Math.floor(Math.random() * 4)];
+
+                particle.style.position = 'fixed';
+
+                particle.style.left = x + 'px';
+
+                particle.style.top = y + 'px';
+
+                particle.style.pointerEvents = 'none';
+
+                particle.style.fontSize = '1.8rem';
+
+                particle.style.zIndex = '9999';
+
+                particle.style.transition = 'all 1s ease-out';
+
+                document.body.appendChild(particle);
+
+
+
+                setTimeout(() => {
+
+                    particle.style.transform = 'translateY(-60px) scale(1.5)';
+
+                    particle.style.opacity = '0';
+
+                }, 50);
+
+
+
+                setTimeout(() => particle.remove(), 1000);
+
+            }
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           E. 100 Unique Love Reasons
+
+           -------------------------------------------------------------------------- */
+
+        const reasonsList = [
+
+            "Your warm and gentle heart.", "The way your eyes light up when you smile.", "How you always take care of me.",
+
+            "Your kindness toward everyone.", "Your soft and soothing voice.", "How safe I feel in your arms.",
+
+            "You are my absolute best friend.", "The way you say my name.", "Your adorable sense of humor.",
+
+            "How you listen to me so patiently.", "Your unending support in everything I do.", "Because you are Ashitosh, my forever person.",
+
+            "Your beautiful heart and soul.", "How you make dark days bright.", "The way you handle every problem calmly.",
+
+            "Your cute forehead kisses.", "You make me feel like the luckiest girl.", "Your loyalty and trust.",
+
+            "How you remember little details about us.", "The way we laugh at silly things together.", "Your patience with me.",
+
+            "Your respectful nature.", "How handsome you look every single day.", "The warmth of your hugs.",
+
+            "Your ambition and hard work.", "How you respect my feelings.", "You are my safest space.",
+
+            "The way you make every moment special.", "Your pure intentions.", "How effortlessly you make me happy.",
+
+            "You love me for who I truly am.", "Your endless encouragement.", "How you protect my heart.",
+
+            "The magical connection we share.", "Your gentle touch.", "Because life is beautiful with you.",
+
+            "How you hold my hand tightly.", "Your calm and reassuring energy.", "You never let me feel alone.",
+
+            "Your cute sleepy voice.", "Because you are my home.", "Your maturity and wisdom.",
+
+            "How you respect my family and dreams.", "Your genuine smile.", "The way you prioritize us.",
+
+            "Because you are my dream come true.", "Your loving guidance.", "How you make ordinary days romantic.",
+
+            "Your unbreakable promises.", "The way you look at me.", "Because you complete my world.",
+
+            "Your kindness to animals.", "Your sweet texts during busy days.", "How you make me feel special.",
+
+            "Because you are my soulmate.", "Your honesty and transparency.", "The comfort in your presence.",
+
+            "How you cheer me up instantly.", "Your positive vibe.", "Because you are my favorite person to talk to.",
+
+            "Your cute reactions.", "How you accept my flaws lovingly.", "Your big and beautiful heart.",
+
+            "The way you stand by my side.", "Your gentle nature.", "How you bring peace to my mind.",
+
+            "Because you are one in a million.", "Your dedication.", "Your sweet morning messages.",
+
+            "How you make me laugh effortlessly.", "The respect you give me.", "Because you are my strength.",
+
+            "Your comforting smile.", "The way you hold me close.", "Because you are my greatest blessing.",
+
+            "Your pure love.", "How you make me a better person.", "Your sweetness.",
+
+            "Because you are Ashitosh, my world.", "Your adorable laughter.", "Your calm demeanor.",
+
+            "How you always check up on me.", "Your unconditional love.", "Because you are my favorite hello and hardest goodbye.",
+
+            "Your soft hands.", "How you care for my happiness.", "The memories we build every day.",
+
+            "Your loving soul.", "Your quiet confidence.", "Because you make my heart beat faster.",
+
+            "Your unwavering faith in us.", "Your warm shoulder to lean on.", "How you bring out the best in me.",
+
+            "Because you are my forever partner.", "Your generous spirit.", "Your charming style.",
+
+            "Because you love Sejal unconditionally.", "Your golden heart.", "Because you exist, my dearest Aashu ❤️"
+
+        ];
+
+
+
+        function generate100Reasons() {
+
+            const container = document.getElementById('reasons-container');
+
+            reasonsList.forEach((reason, idx) => {
+
+                let div = document.createElement('div');
+
+                div.className = 'reason-item';
+
+                div.innerHTML = `<span style="color: var(--primary-pink); font-weight: bold;">${idx + 1}.</span> ${reason}`;
+
+                container.appendChild(div);
+
+            });
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           F. Real Candle Blow & Games
+
+           -------------------------------------------------------------------------- */
+
+        function blowOutFlame() {
+
+            const flame = document.getElementById('candle-flame');
+
+            const status = document.getElementById('candle-status');
+
+            flame.classList.add('blown-out');
+
+            status.innerHTML = "✨ You blew out the candles! Happy Birthday Ashitosh! Tap cake to cut! 🍰";
+
+            confetti();
+
+        }
+
+
+
+        function enableMicBlow() {
+
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+
+                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+                    const mic = audioCtx.createMediaStreamSource(stream);
+
+                    const analyser = audioCtx.createAnalyser();
+
+                    analyser.fftSize = 256;
+
+                    mic.connect(analyser);
+
+
+
+                    const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+                    function checkVolume() {
+
+                        analyser.getByteFrequencyData(dataArray);
+
+                        let sum = 0;
+
+                        for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+
+                        if ((sum / dataArray.length) > 50) blowOutFlame();
+
+                        else requestAnimationFrame(checkVolume);
+
+                    }
+
+                    checkVolume();
+
+                    alert("Microphone active! Blow directly into your mic now! 🌬️");
+
+                }).catch(() => alert("Mic permission denied. Click on the flame to blow it out!"));
+
+            }
+
+        }
+
+
+
+        document.getElementById('candle-flame').onclick = blowOutFlame;
+
+
+
+        function interactCake() {
+
+            confetti();
+
+            alert("Yummy cake cut! Sejal feeds the first slice to Ashitosh! 🍰❤️");
+
+        }
+
+
+
+        // Mini Games Engine
+
+        let poppedCount = 0;
+
+        function initBalloons() {
+
+            const area = document.getElementById('balloon-area');
+
+            area.innerHTML = '';
+
+            poppedCount = 0;
+
+            for (let i = 0; i < 5; i++) {
+
+                let balloon = document.createElement('div');
+
+                balloon.className = 'game-balloon';
+
+                balloon.innerText = ['🎈', '💖', '🎈', '✨'][Math.floor(Math.random() * 4)];
+
+                balloon.style.left = Math.random() * 80 + 10 + '%';
+
+                balloon.onclick = () => {
+
+                    poppedCount++;
+
+                    document.getElementById('balloon-score').innerText = `Popped: ${poppedCount} / 5`;
+
+                    balloon.remove();
+
+                    confetti();
+
+                    if (poppedCount >= 5) setTimeout(() => { alert("You popped all balloons! Love unlocked! ❤️"); initBalloons(); }, 300);
+
+                };
+
+                area.appendChild(balloon);
+
+            }
+
+        }
+
+
+
+        let heartsFound = 0;
+
+        function initHiddenHearts() {
+
+            const area = document.getElementById('heart-search-area');
+
+            area.innerHTML = '';
+
+            heartsFound = 0;
+
+            const pos = [{top:'20%',left:'15%'},{top:'70%',left:'80%'},{top:'35%',left:'60%'},{top:'75%',left:'25%'}];
+
+            pos.forEach(p => {
+
+                let h = document.createElement('div');
+
+                h.className = 'hidden-heart';
+
+                h.innerText = '❤️';
+
+                h.style.top = p.top; h.style.left = p.left;
+
+                h.onclick = () => {
+
+                    if (!h.classList.contains('found')) {
+
+                        h.classList.add('found');
+
+                        heartsFound++;
+
+                        document.getElementById('heart-score').innerText = `Hearts Found: ${heartsFound} / 4`;
+
+                        confetti();
+
+                        if (heartsFound === 4) setTimeout(() => alert("Found all hearts! Sejal loves you infinitely ❤️"), 300);
+
+                    }
+
+                };
+
+                area.appendChild(h);
+
+            });
+
+        }
+
+
+
+        const quizData = [
+
+            { q: "Who loves Ashitosh the most in the entire world?", opts: ["Sejal ❤️", "The Stars", "Everyone"], ans: 0 },
+
+            { q: "What is Sejal's favorite place to be?", opts: ["Wherever Ashitosh is ❤️", "On vacation", "At home"], ans: 0 }
+
+        ];
+
+        let currentQuiz = 0;
+
+        function loadQuiz() {
+
+            const q = quizData[currentQuiz];
+
+            document.getElementById('quiz-question').innerText = q.q;
+
+            const container = document.getElementById('quiz-options');
+
+            container.innerHTML = '';
+
+            q.opts.forEach(opt => {
+
+                let div = document.createElement('div');
+
+                div.className = 'quiz-option';
+
+                div.innerText = opt;
+
+                div.onclick = () => {
+
+                    confetti();
+
+                    currentQuiz = (currentQuiz + 1) % quizData.length;
+
+                    setTimeout(loadQuiz, 400);
+
+                };
+
+                container.appendChild(div);
+
+            });
+
+        }
+
+
+
+        function startLoveMeter() {
+
+            const counter = document.getElementById('meter-counter');
+
+            const text = document.getElementById('meter-text');
+
+            let val = 0;
+
+            let timer = setInterval(() => {
+
+                val += 15;
+
+                if (val >= 100) {
+
+                    val = "∞";
+
+                    clearInterval(timer);
+
+                    text.style.display = 'block';
+
+                    confetti();
+
+                }
+
+                counter.innerText = val + (val === "∞" ? "" : "%");
+
+            }, 90);
+
+        }
+
+
+
+        /* --------------------------------------------------------------------------
+
+           G. Birthday Run Celebration, Balloon Bloopers & Curtain Call
+
+           -------------------------------------------------------------------------- */
+
+        function releaseVariousColoredBalloons(isBlooper = false) {
+
+            const container = isBlooper ? document.body : document.getElementById('final-screen');
+
+            const balloonColors = isBlooper ? ['🎈', '💥', '🎉', '✨', '💖', '🎁', '🎈', '⭐'] : ['🎈', '🔴', '🟡', '🟢', '🔵', '🟣', '💖', '⭐'];
+
+
+
+            for (let i = 0; i < (isBlooper ? 40 : 25); i++) {
+
+                setTimeout(() => {
+
+                    const b = document.createElement('div');
+
+                    b.className = 'run-balloon';
+
+                    b.innerText = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+
+                    b.style.left = (Math.random() * 90 + 5) + 'vw';
+
+                    b.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+
+
+
+                    if (b.innerText === '🎈') {
+
+                        const hue = Math.floor(Math.random() * 360);
+
+                        b.style.filter = `hue-rotate(${hue}deg) drop-shadow(0 0 10px rgba(255,255,255,0.5))`;
+
+                    }
+
+
+
+                    container.appendChild(b);
+
+                    setTimeout(() => b.remove(), 4500);
+
+                }, i * 100);
+
+            }
+
+        }
+
+
+
+        function startBirthdayRun() {
+
+            document.getElementById('final-screen').style.display = 'flex';
+
+            releaseVariousColoredBalloons();
+
+
+
+            var duration = 4 * 1000;
+
+            var end = Date.now() + duration;
+
+
+
+            (function frame() {
+
+                confetti({ particleCount: 10, angle: 60, spread: 80, origin: { x: 0 } });
+
+                confetti({ particleCount: 10, angle: 120, spread: 80, origin: { x: 1 } });
+
+                confetti({ particleCount: 15, angle: 90, spread: 100, origin: { y: 0.6 } });
+
+                if (Date.now() < end) requestAnimationFrame(frame);
+
+            }());
+
+        }
+
+
+
+        function replayCelebration() {
+
+            startBirthdayRun();
+
+        }
+
+
+
+        function closeBirthdayRun() {
+
+            // 1. Fire giant blooper balloons & fireworks explosion
+
+            releaseVariousColoredBalloons(true);
+
+
+
+            var end = Date.now() + (3 * 1000);
+
+            (function blooperFireworks() {
+
+                confetti({ particleCount: 25, spread: 360, startVelocity: 30, origin: { x: Math.random(), y: Math.random() - 0.2 } });
+
+                if (Date.now() < end) requestAnimationFrame(blooperFireworks);
+
+            }());
+
+
+
+            // 2. Hide final overlay after brief moment
+
+            setTimeout(() => {
+
+                document.getElementById('final-screen').style.display = 'none';
+
+
+
+                // 3. Smooth curtain pull down closing
+
+                setTimeout(() => {
+
+                    document.body.classList.add('curtains-closed');
+
+                }, 500);
+
+            }, 1200);
+
+        }
+
+
+
+        function fireworks() {
+
+            confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+
+        }
+
+
+
+        function initCanvas() {
+
+            const canvas = document.getElementById('bg-canvas');
+
+            const ctx = canvas.getContext('2d');
+
+            let w = canvas.width = window.innerWidth;
+
+            let h = canvas.height = window.innerHeight;
+
+
+
+            window.addEventListener('resize', () => {
+
+                w = canvas.width = window.innerWidth;
+
+                h = canvas.height = window.innerHeight;
+
+            });
+
+
+
+            const particles = [];
+
+            for (let i = 0; i < 50; i++) {
+
+                particles.push({
+
+                    x: Math.random() * w, y: Math.random() * h,
+
+                    size: Math.random() * 12 + 6, speedY: Math.random() * -1 - 0.4,
+
+                    type: ['❤️', '✨', '🌸'][Math.floor(Math.random() * 3)]
+
+                });
+
+            }
+
+
+
+            function animate() {
+
+                ctx.clearRect(0, 0, w, h);
+
+                particles.forEach(p => {
+
+                    p.y += p.speedY;
+
+                    if (p.y < -20) p.y = h + 20;
+
+                    ctx.font = `${p.size}px serif`;
+
+                    ctx.fillText(p.type, p.x, p.y);
+
+                });
+
+                requestAnimationFrame(animate);
+
+            }
+
+            animate();
+
+        }
+
+
+
+        
+    /* Real memories lightbox */
+    function openMemory(img, caption) {
+      const box = document.getElementById('memory-lightbox');
+      const big = document.getElementById('memory-lightbox-image');
+      const text = document.getElementById('memory-lightbox-caption');
+      big.src = img.src;
+      big.alt = img.alt || 'Our memory';
+      text.textContent = caption;
+      box.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMemory(event) {
+      if (event && event.target && event.target.id !== 'memory-lightbox') return;
+      const box = document.getElementById('memory-lightbox');
+      box.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMemory();
+    });
+
+window.onload = () => {
+
+            playSentenceSequence();
+
+            generate100Reasons();
+
+            initBalloons();
+
+            initHiddenHearts();
+
+            loadQuiz();
+
+            initCanvas();
+
+        };
+
+    </script>
+
+</body>
+
+</html>
